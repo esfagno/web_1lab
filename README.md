@@ -23,3 +23,42 @@
 /script.js             - JavaScript файл для валидации и AJAX запросов
 /fastcgi-server.jar    - Java FastCGI сервер
 /config                - Конфигурация Apache httpd
+```
+
+## Поднятие Apache HTTP сервера
+
+Для того чтобы веб-сервер обслуживал статический контент и перенаправлял запросы к FastCGI серверу:
+
+1. Установите **Apache HTTP сервер** на вашем хосте (например, на **Гелиосе**).
+
+2. Настройте конфигурацию Apache для обработки статического контента и перенаправления запросов к FastCGI серверу. Пример конфигурации:
+
+```apache
+<VirtualHost *:80>
+    DocumentRoot /path/to/web_lab1
+    DirectoryIndex index.html
+
+    <Directory "/path/to/web_lab1">
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    # FastCGI
+    AddHandler fastcgi-script .fcgi
+    FastCgiExternalServer /path/to/fastcgi-server.jar -socket /tmp/fastcgi.sock
+</VirtualHost>
+```
+## Веб-страница
+
+1. **HTML-форма:** Страница содержит форму, в которой пользователь вводит параметры **R**, **X** и **Y** для проверки попадания точки в область.
+
+2. **CSS:** Все стили должны быть описаны в отдельном файле **styles.css**. Используйте таблицы стилей для задания внешнего вида формы, таблиц с результатами и шапки страницы.
+
+3. **JavaScript:** Валидация ввода данных с использованием регулярных выражений, отправка данных на сервер через AJAX, обновление таблицы с результатами.
+
+## Технологии:
+
+- **Java:** FastCGI сервер на Java
+- **HTML/CSS:** Для интерфейса
+- **JavaScript:** Валидация данных и AJAX запросы
+- **Apache HTTP Server:** Для обслуживания статики и перенаправления запросов на FastCGI сервер
