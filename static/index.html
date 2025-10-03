@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа №1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Глотова Дарья</h1>
+    <p>Группа: P3210 | Вариант: 408449</p>
+</header>
+
+<div class="content-container">
+    <div class="table-container">
+        <div class="results-scroll">
+            <table id="resultsTable" border="1">
+                <thead>
+                <tr>
+                    <th>X</th>
+                    <th>Y</th>
+                    <th>R</th>
+                    <th>Result</th>
+                    <th>Current Time</th>
+                    <th>Execution Time (nano)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td colspan="6" style="text-align: center;">Нет результатов</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <canvas id="coordinatePlane"></canvas>
+</div>
+
+<div class="form-container">
+    <form id="pointForm" method="POST" action="/hitcheck">
+        <div class="input-container">
+            <label for="xValue">X:</label>
+            <select id="xValue" name="x" required>
+                <option value="-2">-2</option>
+                <option value="-1.5">-1.5</option>
+                <option value="-1">-1</option>
+                <option value="-0.5">-0.5</option>
+                <option value="0">0</option>
+                <option value="0.5">0.5</option>
+                <option value="1">1</option>
+                <option value="1.5">1.5</option>
+                <option value="2">2</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="yValue">Y:</label>
+            <input type="text" id="yValue" name="y" placeholder="(-5 ... 5)" required>
+        </div>
+        <div class="input-container">
+            <label>R:</label>
+            <div class="r-buttons">
+                <button type="button" class="r-button" value="1">1</button>
+                <button type="button" class="r-button" value="2">2</button>
+                <button type="button" class="r-button" value="3">3</button>
+                <button type="button" class="r-button" value="4">4</button>
+                <button type="button" class="r-button" value="5">5</button>
+            </div>
+        </div>
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

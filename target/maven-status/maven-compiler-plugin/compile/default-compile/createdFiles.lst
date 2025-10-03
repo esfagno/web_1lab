@@ -1,0 +1,10 @@
+ru\example\server\Handler.class
+ru\example\server\HitChecker.class
+ru\example\Main.class
+ru\example\server\Constants.class
+ru\example\server\HitResult.class
+ru\example\server\InputValidator.class
+ru\example\server\Response.class
+ru\example\server\ValidationException.class
+ru\example\server\HitResult$HitResultBuilder.class
+ru\example\server\HitStorage.class
